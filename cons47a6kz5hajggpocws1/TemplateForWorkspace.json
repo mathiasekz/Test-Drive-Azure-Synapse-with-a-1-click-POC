@@ -7,6 +7,10 @@
 			"metadata": "Workspace name",
 			"defaultValue": "cons47a6kz5hajggpocws1"
 		},
+		"TripFaresDataLakeStorageLinkedService_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'TripFaresDataLakeStorageLinkedService'"
+		},
 		"TripFaresSynapseAnalyticsLinkedService_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'TripFaresSynapseAnalyticsLinkedService'"
@@ -466,7 +470,8 @@
 				"annotations": []
 			},
 			"dependsOn": [
-				"[concat(variables('workspaceId'), '/dataflows/tripFaresDataTransformations')]"
+				"[concat(variables('workspaceId'), '/dataflows/tripFaresDataTransformations')]",
+				"[concat(variables('workspaceId'), '/integrationRuntimes/AutoResolveIntegrationRuntime')]"
 			]
 		},
 		{
@@ -904,18 +909,8 @@
 				"typeProperties": {
 					"url": "[parameters('TripFaresDataLakeStorageLinkedService_properties_typeProperties_url')]",
 					"accountKey": {
-						"type": "AzureKeyVaultSecret",
-						"store": {
-							"referenceName": "keyVaultLinkedservice",
-							"type": "LinkedServiceReference",
-							"parameters": {
-								"keyVaultName": {
-									"value": "@linkedService().keyVaultName",
-									"type": "Expression"
-								}
-							}
-						},
-						"secretName": "adlsAccessKey"
+						"type": "SecureString",
+						"value": "[parameters('TripFaresDataLakeStorageLinkedService_accountKey')]"
 					}
 				},
 				"connectVia": {
@@ -924,8 +919,7 @@
 				}
 			},
 			"dependsOn": [
-				"[concat(variables('workspaceId'), '/integrationRuntimes/AutoResolveIntegrationRuntime')]",
-				"[concat(variables('workspaceId'), '/linkedServices/keyVaultLinkedservice')]"
+				"[concat(variables('workspaceId'), '/integrationRuntimes/AutoResolveIntegrationRuntime')]"
 			]
 		},
 		{
@@ -950,21 +944,7 @@
 				"annotations": [],
 				"type": "AzureSqlDW",
 				"typeProperties": {
-					"connectionString": "[parameters('TripFaresSynapseAnalyticsLinkedService_connectionString')]",
-					"password": {
-						"type": "AzureKeyVaultSecret",
-						"store": {
-							"referenceName": "keyVaultLinkedservice",
-							"type": "LinkedServiceReference",
-							"parameters": {
-								"keyVaultName": {
-									"value": "@linkedService().keyVaultName",
-									"type": "Expression"
-								}
-							}
-						},
-						"secretName": "synapseSqlLoginPassword"
-					}
+					"connectionString": "[parameters('TripFaresSynapseAnalyticsLinkedService_connectionString')]"
 				},
 				"connectVia": {
 					"referenceName": "AutoResolveIntegrationRuntime",
@@ -972,8 +952,7 @@
 				}
 			},
 			"dependsOn": [
-				"[concat(variables('workspaceId'), '/integrationRuntimes/AutoResolveIntegrationRuntime')]",
-				"[concat(variables('workspaceId'), '/linkedServices/keyVaultLinkedservice')]"
+				"[concat(variables('workspaceId'), '/integrationRuntimes/AutoResolveIntegrationRuntime')]"
 			]
 		},
 		{
