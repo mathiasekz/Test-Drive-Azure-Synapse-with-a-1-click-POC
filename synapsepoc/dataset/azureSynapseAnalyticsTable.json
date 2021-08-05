@@ -5,22 +5,11 @@
 			"referenceName": "TripFaresSynapseAnalyticsLinkedService",
 			"type": "LinkedServiceReference",
 			"parameters": {
-				"SynapseWorkspaceName": {
-					"value": "@dataset().SynapseWorkspaceName",
-					"type": "Expression"
-				},
-				"SQLDedicatedPoolName": {
-					"value": "@dataset().SQLDedicatedPoolName",
-					"type": "Expression"
-				},
-				"keyVaultName": {
-					"value": "@dataset().keyVaultName",
-					"type": "Expression"
-				},
-				"SQLLoginUsername": {
-					"value": "@dataset().SQLLoginUsername",
-					"type": "Expression"
-				}
+				"SynapseWorkspaceName": "cons47a6kz5hajggpocws1.database.windows.net",
+				"SQLDedicatedPoolName": "cons47a6kz5hajggpocws1",
+				"keyVaultName": "kvcons47a6kz5hajggpoc",
+				"SQLLoginUsername": "Sqladmin",
+				"SQLPassword": "cdzvzsdbv@fbvzsfvszf8989"
 			}
 		},
 		"parameters": {
@@ -47,10 +36,7 @@
 		"type": "AzureSqlDWTable",
 		"schema": [],
 		"typeProperties": {
-			"schema": {
-				"value": "@dataset().SchemaName",
-				"type": "Expression"
-			},
+			"schema": "tripFares",
 			"table": "AggregateTaxiData"
 		}
 	}
