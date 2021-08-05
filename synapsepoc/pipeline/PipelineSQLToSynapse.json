@@ -30,6 +30,201 @@
 							"referenceName": "TripFaresDataLakeStorageLinkedService",
 							"type": "LinkedServiceReference"
 						}
+					},
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "Order Key",
+									"type": "Int64"
+								},
+								"sink": {
+									"name": "Order Key",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"name": "City Key",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "City Key",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "Customer Key",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "Customer Key",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "Stock Item Key",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "Stock Item Key",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "Order Date Key",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "Order Date Key",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "Picked Date Key",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "Picked Date Key",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "Salesperson Key",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "Salesperson Key",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "Picker Key",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "Picker Key",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "WWI Order ID",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "WWI Order ID",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "WWI Backorder ID",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "WWI Backorder ID",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "Description",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Description",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Package",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Package",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Quantity",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "Quantity",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "Unit Price",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "Unit Price",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "Tax Rate",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "Tax Rate",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "Total Excluding Tax",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "Total Excluding Tax",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "Tax Amount",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "Tax Amount",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "Total Including Tax",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "Total Including Tax",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "Lineage Key",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "Lineage Key",
+									"type": "Int32"
+								}
+							}
+						]
 					}
 				},
 				"inputs": [
