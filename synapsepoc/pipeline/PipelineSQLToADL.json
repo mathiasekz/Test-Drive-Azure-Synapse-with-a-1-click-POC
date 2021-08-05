@@ -27,6 +27,54 @@
 					},
 					"firstRowOnly": false
 				}
+			},
+			{
+				"name": "LoopSchemasAndTables",
+				"type": "ForEach",
+				"dependsOn": [
+					{
+						"activity": "GetTablesAndSchemas",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@activity('GetTablesAndSchemas').output.value",
+						"type": "Expression"
+					},
+					"activities": [
+						{
+							"name": "WWITableToDataLake",
+							"type": "Copy",
+							"dependsOn": [],
+							"policy": {
+								"timeout": "7.00:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"source": {
+									"type": "SqlServerSource",
+									"queryTimeout": "02:00:00",
+									"partitionOption": "None"
+								},
+								"enableStaging": false
+							},
+							"inputs": [
+								{
+									"referenceName": "WWI",
+									"type": "DatasetReference"
+								}
+							]
+						}
+					]
+				}
 			}
 		],
 		"annotations": []
