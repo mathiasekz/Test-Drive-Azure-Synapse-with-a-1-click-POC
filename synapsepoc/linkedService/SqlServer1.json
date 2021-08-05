@@ -1,0 +1,17 @@
+{
+	"name": "SqlServer1",
+	"type": "Microsoft.Synapse/workspaces/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "SqlServer",
+		"typeProperties": {
+			"connectionString": "integrated security=True;data source=M4800;initial catalog=WideWorldImportersDW",
+			"userName": "M4800\\administrator",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiIyZTZlZDZjZS01MTRlLTQxODQtOWQ2ZS1lZDNhMmVmMDhjNmEiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "IntegrationRuntimeM4800",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
