@@ -14,13 +14,16 @@
 			},
 			"SQLLoginUsername": {
 				"type": "string"
+			},
+			"SQLPassword": {
+				"type": "string",
+				"defaultValue": "cdzvzsdbv@fbvzsfvszf8989"
 			}
 		},
 		"annotations": [],
 		"type": "AzureSqlDW",
 		"typeProperties": {
-			"connectionString": "integrated security=False;encrypt=True;connection timeout=30;data source=@{linkedService().SynapseWorkspaceName};initial catalog=@{linkedService().SQLDedicatedPoolName};user id=@{linkedService().SQLLoginUsername}",
-			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkNPTlM0N0E2S1o1SEFKR0dQT0NXUzFfMGY2ZTkwYWItOWI3NS00OTc0LWE0Y2EtMTkwYzYxNThkZDQ3Ig0KfQ=="
+			"connectionString": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=@{linkedService().SynapseWorkspaceName};Initial Catalog=@{linkedService().SQLDedicatedPoolName};User ID=@{linkedService().SQLLoginUsername};Password=@{linkedService().SQLPassword}"
 		},
 		"connectVia": {
 			"referenceName": "AutoResolveIntegrationRuntime",
