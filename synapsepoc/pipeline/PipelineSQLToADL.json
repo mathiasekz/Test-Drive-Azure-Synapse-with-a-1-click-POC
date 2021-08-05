@@ -94,7 +94,15 @@
 							"outputs": [
 								{
 									"referenceName": "RawWWI",
-									"type": "DatasetReference"
+									"type": "DatasetReference",
+									"parameters": {
+										"SchemaName": {
+											"value": "@item.SchemaName",
+											"type": "Expression"
+										},
+										"TableName": "@item.TableName",
+										"Container": "raw"
+									}
 								}
 							]
 						}
