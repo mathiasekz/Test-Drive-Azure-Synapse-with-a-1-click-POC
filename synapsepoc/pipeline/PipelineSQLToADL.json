@@ -64,6 +64,15 @@
 									"queryTimeout": "02:00:00",
 									"partitionOption": "None"
 								},
+								"sink": {
+									"type": "ParquetSink",
+									"storeSettings": {
+										"type": "AzureBlobFSWriteSettings"
+									},
+									"formatSettings": {
+										"type": "ParquetWriteSettings"
+									}
+								},
 								"enableStaging": false
 							},
 							"inputs": [
@@ -72,14 +81,20 @@
 									"type": "DatasetReference",
 									"parameters": {
 										"SchemaName": {
-											"value": "@dataset().SchemaName",
+											"value": "@item().SchemaName",
 											"type": "Expression"
 										},
 										"TableName": {
-											"value": "@dataset().TableName",
+											"value": "@item().TableName",
 											"type": "Expression"
 										}
 									}
+								}
+							],
+							"outputs": [
+								{
+									"referenceName": "RawWWI",
+									"type": "DatasetReference"
 								}
 							]
 						}
