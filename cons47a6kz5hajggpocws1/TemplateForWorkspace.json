@@ -25,7 +25,7 @@
 		},
 		"TripFaresDataLakeStorageLinkedService_properties_typeProperties_url": {
 			"type": "string",
-			"defaultValue": "@{concat('https://',linkedService().datalakeAccountName,'.dfs.core.windows.net')}"
+			"defaultValue": "https://cons47a6kz5hajggpoc.dfs.core.windows.net/"
 		},
 		"keyVaultLinkedservice_properties_typeProperties_baseUrl": {
 			"type": "string",
@@ -461,7 +461,7 @@
 					},
 					"datalakeAccountName": {
 						"type": "string",
-						"defaultValue": "cons47a6kz5hajggpoc"
+						"defaultValue": "datalakeAccountName"
 					}
 				},
 				"folder": {
@@ -939,6 +939,10 @@
 					},
 					"SQLLoginUsername": {
 						"type": "string"
+					},
+					"SQLPassword": {
+						"type": "string",
+						"defaultValue": "cdzvzsdbv@fbvzsfvszf8989"
 					}
 				},
 				"annotations": [],
