@@ -69,7 +69,17 @@
 							"inputs": [
 								{
 									"referenceName": "WWI",
-									"type": "DatasetReference"
+									"type": "DatasetReference",
+									"parameters": {
+										"SchemaName": {
+											"value": "@dataset().SchemaName",
+											"type": "Expression"
+										},
+										"TableName": {
+											"value": "@dataset().TableName",
+											"type": "Expression"
+										}
+									}
 								}
 							]
 						}
