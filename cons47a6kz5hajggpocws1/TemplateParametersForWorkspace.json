@@ -5,6 +5,9 @@
 		"workspaceName": {
 			"value": "cons47a6kz5hajggpocws1"
 		},
+		"AzureSynapseAnalytics_connectionString": {
+			"value": ""
+		},
 		"TripFaresDataLakeStorageLinkedService_accountKey": {
 			"value": ""
 		},
