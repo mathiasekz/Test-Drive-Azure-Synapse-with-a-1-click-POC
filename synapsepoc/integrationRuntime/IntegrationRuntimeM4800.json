@@ -1,0 +1,6 @@
+{
+	"name": "IntegrationRuntimeM4800",
+	"properties": {
+		"type": "SelfHosted"
+	}
+}
