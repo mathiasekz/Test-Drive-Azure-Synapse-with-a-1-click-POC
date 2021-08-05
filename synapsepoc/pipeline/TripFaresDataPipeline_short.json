@@ -95,7 +95,7 @@
 			},
 			"datalakeAccountName": {
 				"type": "string",
-				"defaultValue": "cons47a6kz5hajggpoc"
+				"defaultValue": "datalakeAccountName"
 			}
 		},
 		"folder": {
