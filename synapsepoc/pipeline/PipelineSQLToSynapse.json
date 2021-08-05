@@ -25,17 +25,10 @@
 						"allowCopyCommand": true
 					},
 					"enableStaging": true,
-					"logSettings": {
-						"enableCopyActivityLog": true,
-						"copyActivityLogSettings": {
-							"logLevel": "Warning",
-							"enableReliableLogging": false
-						},
-						"logLocationSettings": {
-							"linkedServiceName": {
-								"referenceName": "TripFaresDataLakeStorageLinkedService",
-								"type": "LinkedServiceReference"
-							}
+					"stagingSettings": {
+						"linkedServiceName": {
+							"referenceName": "TripFaresDataLakeStorageLinkedService",
+							"type": "LinkedServiceReference"
 						}
 					}
 				},
